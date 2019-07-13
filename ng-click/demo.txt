@@ -1,0 +1,25 @@
+[{
+	"SubjectCode":"CS-13",
+	"SubjectDescription":"git hub"
+},
+{
+	"SubjectCode":"CS-14",
+	"SubjectDescription":"Asp.net Web Programing MVC"
+},
+{
+	"SubjectCode":"CS-15",
+	"SubjectDescription":"Project"		
+},
+{
+	"SubjectCode":"CS-16",
+	"SubjectDescription":"Python prograing language"
+},
+{
+	"SubjectCode":"CS-17",
+	"SubjectDescription":"MOBILE APPLICATIONS DEVELOPMENT USING WEB TECHNOLOGIES "
+},
+{
+	"SubjectCode":"CS-18",
+	"SubjectDescription":"Database Management"
+}
+]

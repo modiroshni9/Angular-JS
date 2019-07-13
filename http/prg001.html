@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../angular.min.js"></script>
+</head>
+<body ng-app="myapp" class="text-center">
+	<div class="container" ng-controller="mycontroller">
+		<h3>Your IP Address is : <b>{{ip}}</b></h3>
+		<h3>Your country Code is : <b>{{country_code}}</b></h3>
+		<h3>Your country Name is : <b>{{country_name}}</b></h3>
+		<h3>Your region Name is : <b>{{region_name}}</b></h3>
+		<h3>Your city is : <b>{{city}}</b></h3>
+		<h3>Your zip Code is : <b>{{zip}}</b></h3>
+		<h3>Your latitude is : <b>{{latitude}}</b></h3>
+		<h3>Your longitude is : <b>{{longitude}}</b></h3>
+		<img src="{{country_flag}}" width="25%">
+	</div>
+<script>
+	var app=angular.module('myapp',[]);
+	var url="http://api.ipapi.com/119.160.192.198?access_key=ba9a5c22fbe9adabfd29ad57dc84defc";
+	app.controller('mycontroller',function($scope,$http){
+		// $scope.name="Roshni"
+		// $scope.city="Surat"
+		$http.get(url).then(function($response)
+		{
+
+			$scope.ip=$response.data.ip;
+			$scope.country_code=$response.data.country_code;
+			$scope.country_name=$response.data.country_name;
+			$scope.region_name=$response.data.region_name;
+			$scope.city=$response.data.city;
+			$scope.zip=$response.data.zip;
+			$scope.latitude=$response.data.latitude;
+			$scope.longitude=$response.data.longitude;
+			$scope.country_flag=$response.data.location.country_flag;
+
+		});
+	});
+	
+	
+</script>
+</body>
+</html>

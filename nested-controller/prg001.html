@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../angular.min.js"></script>
+</head>
+<body ng-app="myapp" >
+	<div class="container" >
+		<div class="text-center page-header">
+			<h1>Nested Controller</h1>
+		</div>
+		<div class="row" >
+			<div ng-controller="mycontroller">
+				<h3 class="text-danger">My name is {{name}} and my city is {{city}}</h3>
+				<div ng-controller="mycontroller1">
+					<h3 class="text-success">My name is {{name}} and my city is {{city}}</h3>	
+						<div ng-controller="mycontroller2">
+							<h3 class="text-primary">My name is {{name}} and my city is {{city}}</h3>		
+						</div>	
+				</div>
+			</div>
+		</div>
+		
+	</div>
+<script>
+	var app=angular.module('myapp',[]);
+	app.controller('mycontroller',function($scope){
+		$scope.name="Roshni"
+		$scope.city="Surat"
+
+	});
+	app.controller('mycontroller1',function($scope){
+		$scope.name="Mausmi"
+		$scope.city="Rajkot"
+
+	});
+	app.controller('mycontroller2',function($scope){
+		$scope.name="Priyanka"
+
+	});
+	
+</script>
+</body>
+</html>

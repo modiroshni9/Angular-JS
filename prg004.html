@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myctrl">
+		First Name:<input type="text" ng-model="fname"><br>
+		Last Name:<input type="text" ng-model="lname"><br>
+		Fill Name: {{fname + " " + lname}}
+	</div>
+	<script>
+		var app=angular.module('myApp', []);
+
+		app.controller('myctrl',function($scope){
+			$scope.fname="Roshni"
+			$scope.lname="Modi"
+		});
+		
+	</script>
+</body>
+</html>

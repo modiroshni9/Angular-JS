@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> -->
+
+   	<script type="text/javascript" src="../angular.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="mycontroller"><center>
+	<bR>
+	Font Color:<input type="text" ng-model="color"><bR>
+	Background Color:<input type="text" ng-model="backgound"><bR>
+	font size:<select  ng-model="size">
+		<option value="10">10</option>
+		<option value="20">20</option>
+		<option value="30">30</option>
+		<option value="40">40</option>
+		</select>
+<br>
+Font Family:
+	
+	 <select ng-model="family">
+	<option value="Calibri" >Calibri</option>
+	<option value="Cambria">Cambria</option>
+	<option value="Berlin Sans FB">Berlin Sans FB</option>
+	<option value="Times New Roman">Times New Roman</option>
+	<option value="Arial">Arial</option>
+	</select>
+<br>
+<br>
+<span style="background-color: {{backgound}};font-family: {{family}};font-size: {{size}}px;color: {{color}}">My name is Roshni</span>
+<br>
+</center>
+</body>
+<script>
+	var app=angular.module('myapp',[]);
+	app.controller('mycontroller',function($scope){
+			$scope.color="yellow";
+			$scope.backgound="Red";
+			$scope.size="10";
+			$scope.family="Calibri";
+	});
+	
+</script>
+</html>

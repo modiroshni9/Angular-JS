@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body ng-app="myapp" class="text-center">
+	<div class="container" ng-controller="mycontroller">
+		<table class="table">	
+			<tr>	
+				<th ng-click="orderByMe('SubjectCode')">Subject Code</th>
+				<th ng-click="orderByMe('SubjectDescription')">Subject Description</th>
+			</tr>
+			<tr ng-repeat="k in Subjects | orderBy:column:reverse">
+				<td ng-if="$odd" style="background-color: #F1F1F1">{{k.SubjectCode}}</td>
+				<td ng-if="$even" >{{k.SubjectCode}}</td>
+				<td ng-if="$odd" style="background-color: #F1F1F1">{{k.SubjectDescription}}</td>
+				<td ng-if="$even" >{{k.SubjectDescription}}</td>
+			</tr>
+		</table>
+	</div>
+<script>
+	var app=angular.module('myapp',[]);
+	var url='demo.txt';
+	app.controller('mycontroller',function($scope,$http){
+		$http.get(url).then(function(response)
+		{
+		console.log(response.data);
+			$scope.Subjects=response.data;
+		});
+		
+		//$scope.column = "SubjectCode";
+		//$scope.reverse = false;
+		
+		$scope.orderByMe=function(col){
+				$scope.column = col;
+				if($scope.reverse)
+				{
+					$scope.reverse = false;
+				}
+				else
+				{
+					$scope.reverse = true;
+				}
+		}
+	});
+	
+	
+</script>
+</body>
+</html>

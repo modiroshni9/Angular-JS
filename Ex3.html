@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body ng-app="myapp" ng-controller="mycontroller">
+	<div class="container" >
+		<div class="text-center page-header">
+			<h1>Ng-Show</h1>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label>BCA:</label><br>
+				<input type="checkbox" ng-model="BCA">
+				<div class="Jumbotron" ng-show="BCA">
+					<div>
+						JAVA<BR>
+						ASP.NET
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<label>MSCIT</label><br>
+				<input type="checkbox" ng-model="MSCIT">
+				<div class="Jumbotron" ng-show="MSCIT">
+					<div>
+						IONIC<BR>
+						ASP.NET MVC
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<label>MCA</label><br>
+				<input type="checkbox" ng-model="MCA">
+				<div class="Jumbotron" ng-show="MCA">
+					<div>
+						PYTHON<BR>
+						ANDROID
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+<script>
+	var app=angular.module('myapp',[])
+	.controller('mycontroller',function($scope){
+		$scope.BCA=true;
+		$scope.MSCIT=true;
+		$scope.MCA=true;
+
+	});
+	
+</script>
+</body>
+</html>

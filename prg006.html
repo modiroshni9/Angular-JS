@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+   	<script type="text/javascript" src="angular.min.js"></script>
+   	
+   	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body ng-app="myapp" ng-controller="mycontroller" class="container">
+	<center>
+			<form class="form">
+				<div class="row">
+					<div class="center col-md-6">
+						Num1:<input type="text" name="num1" class="form-control" ng-model="num1"><br>
+						Num2:<input type="text" name="num2" ng-model="num2" class="form-control">
+						<div>{{answer}}</div>
+					</div>
+					<div class="center col-md-6">
+						<BUTTON ng-click="Add()">+</BUTTON>
+						<BUTTON ng-click="Sub()">-</BUTTON>
+						<BUTTON ng-click="mul()">*</BUTTON>
+						<BUTTON ng-click="Div()">/</BUTTON>
+						<BUTTON ng-click="x2()">x2</BUTTON>
+						<BUTTON ng-click="x3()">x3</BUTTON>
+					</div>
+				</div>
+				
+			</form>
+	</center>
+</body>
+<script>
+	var app=angular.module('myapp',[]);
+	app.controller('mycontroller',function($scope){
+			$scope.num1=2;
+			$scope.num2=2;
+			$scope.answer = 4;
+		$scope.Add=function(){
+			$scope.answer = Number($scope.num1) + Number($scope.num2);
+		}
+		$scope.Sub=function(){
+			$scope.answer = Number($scope.num1) - Number($scope.num2);
+		}
+		$scope.mul=function(){
+			$scope.answer = Number($scope.num1) * Number($scope.num2);
+		}
+		$scope.Div=function(){
+			$scope.answer = Number($scope.num1) / Number($scope.num2);
+
+		}
+		$scope.x2=function(){
+			$scope.answer = Math.pow(Number($scope.num1),2);
+
+		}
+		$scope.x3=function(){
+			$scope.answer = Math.pow(Number($scope.num1),3);
+
+		}
+	});
+	
+</script>
+</html>
