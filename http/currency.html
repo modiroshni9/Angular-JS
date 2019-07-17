@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../angular.min.js"></script>
+	<style>body {
+  background: #eecda3;
+  background: -webkit-linear-gradient(to right, #eecda3, #ef629f);
+  background: linear-gradient(to right, #eecda3, #ef629f);
+  min-height: 100vh;
+}</style>
+</head>
+<body ng-app="myapp" class="text-center">
+	<div class="container" ng-controller="mycontroller">
+		<div class="px-4 px-lg-0">
+  <!-- For demo purpose -->
+  <div class="container text-white py-5 text-center">
+    <h1 class="display-4">Currency</h1>
+    
+    <select ng-model="Mycounty" id="Mycounty"> 
+		<option value="USDUSD" selected>USA</option>
+		<option value="USDINR">India</option>
+		<option value="USDEUR">Germany</option>
+		<option value="USDCAD">Canada</option>
+	</select>
+  </div>
+  <!-- End -->
+
+  <div class="pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+
+			  <!-- Shopping cart table -->
+			  <div class="table-responsive">
+				<table class="table">
+				  <thead>
+					<tr>
+					  <th scope="col" class="border-0 bg-light">
+						<div class="p-2 px-3 text-uppercase">Product</div>
+					  </th>
+					  <th scope="col" class="border-0 bg-light">
+						<div class="py-2 text-uppercase">Price</div>
+					  </th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					  <th scope="row" class="border-0">
+						<div class="p-2">
+						  <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-1_zrifhn.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+						  <div class="ml-3 d-inline-block align-middle">
+							<h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Timex Unisex Originals</a></h5><span class="text-muted font-weight-normal font-italic d-block">Category: Watches</span>
+						  </div>
+						</div>
+					  </th>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDUSD'"><strong>{{ 79.00 * price | currency }}</strong></td>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDCAD'"><strong>{{ 79.00 * price | currency }}</strong></td>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDINR'"><strong>{{ 79.00 * price | currency:"₹" }}</strong></td>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDEUR'"><strong>{{ 79.00 * price | currency:"€" }}</strong></td>
+					  <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+					</tr>
+					<tr>
+					  <th scope="row">
+						<div class="p-2">
+						  <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-3_cexmhn.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+						  <div class="ml-3 d-inline-block align-middle">
+							<h5 class="mb-0"><a href="#" class="text-dark d-inline-block">Lumix camera lense</a></h5><span class="text-muted font-weight-normal font-italic">Category: Electronics</span>
+						  </div>
+						</div>
+					  </th>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDUSD'"><strong>{{ 80.00 * price | currency }}</strong></td>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDCAD'"><strong>{{ 80.00 * price | currency }}</strong></td>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDINR'"><strong>{{ 80.00 * price | currency:"₹" }}</strong></td>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDEUR'"><strong>{{ 80.00 * price | currency:"€" }}</strong></td>
+					  <td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+					  </td>
+					</tr>
+					<tr>
+					  <th scope="row">
+						<div class="p-2">
+						  <img src="https://res.cloudinary.com/mhmd/image/upload/v1556670479/product-2_qxjis2.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
+						  <div class="ml-3 d-inline-block align-middle">
+							<h5 class="mb-0"> <a href="#" class="text-dark d-inline-block">Gray Nike running shoe</a></h5><span class="text-muted font-weight-normal font-italic">Category: Fashion</span>
+						  </div>
+						</div>
+						<td class="border-0 align-middle" ng-if="Mycounty=='USDUSD'"><strong>{{ 90.00 * price | currency }}</strong></td>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDCAD'"><strong>{{ 90.00 * price | currency }}</strong></td>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDINR'"><strong>{{ 90.00 * price | currency:"₹" }}</strong></td>
+					  <td class="border-0 align-middle" ng-if="Mycounty=='USDEUR'"><strong>{{ 90.00 * price | currency:"€" }}</strong></td>
+						<td class="align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+						</td>
+					</tr>
+				  </tbody>
+				</table>
+			  </div>
+			  <!-- End -->
+			</div>
+		  </div>
+
+		 
+
+			</div>
+		  </div>
+		</div>
+	</div>
+<script>
+	var app=angular.module('myapp',[]);
+	var url="http://www.apilayer.net/api/live?access_key=b3f747bb106bf4428a120f1e2b1dd27b";
+	app.controller('mycontroller',function($scope,$http){
+		$scope.Mycounty="USDUSD";
+		$http.get(url).then(function(response)
+			{
+				console.log(response.data.quotes);
+				$scope.price=1;
+			});
+		$("#Mycounty").change(function() {
+			$http.get(url).then(function(response)
+			{
+				<!-- console.log(response.data.quotes); -->
+				<!-- //var curr=$scope.Mycounty.replace(/^"(.*)"$/, ''); -->
+				<!-- var curr=$scope.Mycounty; -->
+				<!-- console.log(curr); -->
+				<!-- $scope.price=response.data.quotes; -->
+				<!-- console.log(response.data.quotes.curr); -->
+				<!-- console.log(response.data.quotes.USDUSD); -->
+				
+				if($scope.Mycounty=="USDUSD")
+				{
+					$scope.price=response.data.quotes.USDUSD
+					
+				}
+				else if($scope.Mycounty=="USDINR")
+				{
+					$scope.price=response.data.quotes.USDINR
+				}
+				else if($scope.Mycounty=="USDEUR")
+				{
+					$scope.price=response.data.quotes.USDEUR
+				}
+				else if($scope.Mycounty=="USDCAD")
+				{
+					$scope.price=response.data.quotes.USDCAD
+				}
+			});
+		});
+	});
+	
+	
+</script>
+</body>
+</html>
